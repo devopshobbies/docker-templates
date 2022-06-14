@@ -1,6 +1,7 @@
 # docker-templates
 ```sh
-in this repository, we are trying to create some practical samples for each language. then you can use them in your personal projects. 
+in this repository, we are trying to create some practical samples for each language.
+then you can use them in your personal projects. 
 do not hesitate to contribute, please
 
 let's grow together!
