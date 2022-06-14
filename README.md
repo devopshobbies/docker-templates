@@ -25,7 +25,7 @@ You can find different frameworks or use cases in each folder.
 
 [03-PHP](03-PHP/README.md)
 
-[04-Go](04-GO/README.md)
+[04-Go](04-GO/)
 
 [05-Java](05-JAVA/README.md)
 
