@@ -18,7 +18,7 @@ DVH
 ## languages 
 You can find different frameworks or use cases in each folder.
 <!-- [number-language-framework or environment](link to repo) -->
-[01-JavaScript/Typescript-Backend]()
+[01-JavaScript/Typescript-Backend](./01-JavaScript/)
 [02-JavaScript/Typescript-Frontend]()
 [03-PHP]()
 [04-Go]()
