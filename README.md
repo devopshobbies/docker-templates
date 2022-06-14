@@ -1,4 +1,6 @@
 # docker-templates
+
+# what's the goal!
 ```sh
 in this repository, we are trying to create some practical samples for each language.
 then you can use them in your personal projects. 
@@ -13,7 +15,7 @@ DVH
 
 
 
-##languages 
+## languages 
 You can find different frameworks or use cases in each folder.
 <!-- [number-language-framework or environment](link to repo) -->
 [01-JavaScript/Typescript-Backend]()
