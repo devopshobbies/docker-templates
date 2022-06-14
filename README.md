@@ -23,7 +23,7 @@ You can find different frameworks or use cases in each folder.
 
 [02-JavaScript/Typescript-Frontend](02-JavaScript-Typescript-Frontend/README.md)
 
-[03-PHP](03-PHP/README.md)
+[03-PHP](03-PHP/)
 
 [04-Go](04-GO/)
 
