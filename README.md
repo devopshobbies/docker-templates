@@ -27,8 +27,9 @@ You can find different frameworks or use cases in each folder.
 
 [04-Go](04-GO/)
 
-[05-Java](05-JAVA/README.md)
+[05-Java](05-JAVA/)
 
-[06-C#](06-C%23/README.md)
+[06-C#](06-C%23/)
 
+[07-Python](06-C%23/)
 
