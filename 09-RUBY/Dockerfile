@@ -5,7 +5,7 @@ FROM ruby:2.7
 WORKDIR /app
 
 # Copy application files
-COPY . /app
+COPY app.rb Gemfile /app
 
 # Install dependencies
 RUN bundle install
