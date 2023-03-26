@@ -31,5 +31,5 @@ You can find different frameworks or use cases in each folder.
 
 [06-C#](06-C%23/)
 
-[07-Python](06-C%23/)
+[07-Python](07-Python)
 
