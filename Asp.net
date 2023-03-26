@@ -4,7 +4,7 @@ copy . .
 
 
 
-RUN dotnet restore  --configfile "./nuget.config"
+RUN dotnet restore  
 
 # Copy everything else and build
 COPY . .
@@ -22,4 +22,4 @@ COPY --from=build-env . .
 RUN  rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Asia/Tehran  /etc/localtime
 
 
-ENTRYPOINT ["bash" ,"script.sh "]
+ENTRYPOINT ["dotnet run "]
