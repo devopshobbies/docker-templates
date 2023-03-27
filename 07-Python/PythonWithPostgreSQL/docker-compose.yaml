@@ -1,0 +1,39 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgresuser
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: postgres
+    volumes:
+      - ./postgres-db-volume:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgresuser"]
+      interval: 5s
+      retries: 5
+    restart: always
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pgadminuser@project.website
+      - PGADMIN_DEFAULT_PASSWORD=pgadminpassword
+    ports:
+      - "15432:80"
+
+  ate:
+    build: .
+    restart: always
+    volumes:
+      - ./project:/app
+    depends_on:
+      - postgres
+
+
+volumes:
+  postgres-db-volume:
+  
