@@ -1,6 +1,9 @@
-# build stage
-# from alpine image
+# builder stage
+# from golang alpine image
 FROM golang:1.19-alpine as builder
+
+# Installing Git for alpine
+RUN apk add --no-cache git
 
 # create work directory called src
 WORKDIR /src
@@ -21,10 +24,10 @@ RUN CGO_ENABLED=0 GO111MODULE=on go build -v -o /main -installsuffix cgo -ldflag
 FROM alpine
 
 # copy executable file
-COPY --from=builder /src/main /main
+COPY --from=builder /src/main .
 
 # expose port 80
 EXPOSE 80
 
 # run app executeable file
-CMD ["/main"]
+CMD ["./main"]
