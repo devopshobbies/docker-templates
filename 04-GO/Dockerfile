@@ -24,7 +24,7 @@ RUN CGO_ENABLED=0 GO111MODULE=on go build -v -o /main -installsuffix cgo -ldflag
 FROM alpine
 
 # copy executable file
-COPY --from=builder /src/main .
+COPY --from=builder /main .
 
 # expose port 80
 EXPOSE 80
