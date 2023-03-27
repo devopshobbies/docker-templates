@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - logapp_static_volume:/logapp/static
+      - logapp_files_volume:/logapp/media
+    networks:
+      - nginx_network
+
+volumes:
+  logapp_static_volume:
+    external: true
+  logapp_files_volume:
+    external: true
+networks:
+  nginx_network:
+    external: true

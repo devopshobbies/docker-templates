@@ -1,27 +1,24 @@
 # docker-templates
 
-# what's the goal!
-```sh
-in this repository, we are trying to create some practical samples for each language.
-then you can use them in your personal projects. 
-do not hesitate to contribute, please
+## What's the goal?!
 
-let's grow together!
+In this repository, we are trying to create some practical samples for each language,
+so you can use them in your personal projects.
+Please do not hesitate to contribute.
+
+Let's grow together!
+
 DVH
-```
-
-
-
-
-
 
 ## languages 
+
 You can find different frameworks or use cases in each folder.
+
 <!-- [number-language-framework or environment](link to repo) -->
 
-[01-JavaScript/Typescript-Backend](01-JavaScript-Typescript-Backend/README.md)
+[01-JavaScript/Typescript-Backend](01-JavaScript-Typescript-Backend/)
 
-[02-JavaScript/Typescript-Frontend](02-JavaScript-Typescript-Frontend/README.md)
+[02-JavaScript/Typescript-Frontend](02-JavaScript-Typescript-Frontend/)
 
 [03-PHP](03-PHP/)
 
@@ -31,5 +28,5 @@ You can find different frameworks or use cases in each folder.
 
 [06-C#](06-C%23/)
 
-[07-Python](06-C%23/)
+[07-Python](07-Python/)
 
