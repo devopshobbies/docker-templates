@@ -17,4 +17,7 @@ RUN dotnet publish "DockerSample.csproj" -c Release -o /app/publish /p:UseAppHos
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+#set timezone tehran
+#set timezone tehran
+RUN  rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Asia/Tehran  /etc/localtime
 ENTRYPOINT ["dotnet", "DockerSample.dll"]
