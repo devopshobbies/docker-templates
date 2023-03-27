@@ -1,9 +1,22 @@
-FROM golang:1.18
+FROM golang:1.18 as build 
 
-COPY src /go/src
+WORKDIR /src
 
-RUN go build -o bin/sample src/main.go
+COPY go.mod .
+# COPY go.sum .
+
+RUN go mod download
+
+COPY . .
+
+RUN CGO_ENABLED=0 GO111MODULE=on go build -v -o sample -installsuffix cgo -ldflags="-w -s" ./cmd/*.go
+
+FROM alpine
+
+COPY --from=build /src/sample /
 
 EXPOSE 80
 
-CMD ["/go/bin/sample"]
+RUN chmod +x /sample
+
+CMD ["/sample"]
