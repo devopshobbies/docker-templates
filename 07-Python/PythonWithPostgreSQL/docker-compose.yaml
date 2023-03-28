@@ -2,10 +2,8 @@ version: '3'
 services:
   postgres:
     image: postgres:13
-    environment:
-      POSTGRES_USER: postgresuser
-      POSTGRES_PASSWORD: postgrespassword
-      POSTGRES_DB: postgres
+    env_file:
+      - .env
     volumes:
       - ./postgres-db-volume:/var/lib/postgresql/data
     ports:
@@ -16,16 +14,7 @@ services:
       retries: 5
     restart: always
 
-  pgadmin4:
-    image: dpage/pgadmin4
-    restart: always
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=pgadminuser@project.website
-      - PGADMIN_DEFAULT_PASSWORD=pgadminpassword
-    ports:
-      - "15432:80"
-
-  ate:
+  python:
     build: .
     restart: always
     volumes:
