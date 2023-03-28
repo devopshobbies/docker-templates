@@ -18,7 +18,7 @@ RUN go mod download
 COPY . .
 
 # build golang app
-RUN CGO_ENABLED=0 GO111MODULE=on go build -v -o /main -installsuffix cgo -ldflags="-w -s" ./cmd/*.go
+RUN CGO_ENABLED=0 GO111MODULE=on go build -v -o /main -installsuffix cgo -ldflags="-w -s" ./echo/*.go
 
 # second stage
 FROM alpine
