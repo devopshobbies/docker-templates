@@ -1,4 +1,4 @@
-## Changes MadeDescribe
+## Changes Made Describe
 
 the changes made to the codebase.
 
