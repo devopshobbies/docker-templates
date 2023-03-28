@@ -1,0 +1,28 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:13
+    env_file:
+      - .env.sample
+    volumes:
+      - ./postgres-db-volume:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgresuser"]
+      interval: 5s
+      retries: 5
+    restart: always
+
+  python:
+    build: .
+    restart: always
+    volumes:
+      - ./project:/app
+    depends_on:
+      - postgres
+
+
+volumes:
+  postgres-db-volume:
+  
