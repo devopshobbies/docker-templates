@@ -34,7 +34,7 @@ git clone https://github.com/devopshobbies/docker-templates.git
 2. Build the Docker image:
 
 ```sh
-cd docker-templates
+cd docker-templates/12-FastApi
 docker build -t hello-fastapi .
 ```
 
