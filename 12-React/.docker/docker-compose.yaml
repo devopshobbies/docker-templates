@@ -1,8 +1,7 @@
 services:
   frontend:
     build:
-      context: .
-      target: dev-envs
+      context: .      
     container_name: frontend
     ports:
       - "80:80"     
