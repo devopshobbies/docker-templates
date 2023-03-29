@@ -32,7 +32,8 @@ apt-get install -y --no-install-recommends git
 EOF
 
 RUN <<EOF
-useradd -s /bin/bash -m vscode
+useradd -s /bin/bash -m <username>
+
 groupadd docker
 usermod -aG docker vscode
 EOF
