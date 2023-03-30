@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:3.16 as stage
 
 LABEL Maintainer="BehroozValikhani | https://t.me/BvkDev" \
       Description="Lightweight container with Nginx 1.22 & PHP-FPM 8.1 based on Alpine Linux."
@@ -34,10 +34,7 @@ RUN apk --no-cache add php81 \
     php81-pecl-redis \
     php81-posix \
     php81-pcntl \
-    nginx supervisor curl tzdata nano
-
-# Install additional php extentions and remove default server definition
-RUN apk add --no-cache php81-bcmath \
+    php81-bcmath \
     php81-ctype \
     php81-gmp \
     php81-gd \
@@ -46,10 +43,8 @@ RUN apk add --no-cache php81-bcmath \
     php81-xmlreader \
     php81-zlib \
     php81-intl \
-    php81-ctype 
-
-
-# RUN rm /etc/nginx/conf.d/default.conf
+    php81-ctype \
+    nginx supervisor curl tzdata nano
 
 # Symlink php81 => php
 RUN ln -s /usr/bin/php81 /usr/bin/php
@@ -58,9 +53,6 @@ RUN ln -s /usr/bin/php81 /usr/bin/php
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     mkdir -p /.composer/cache/ && \
     rm -rf composer-setup.php
-
-# Install PHP tools
-#COPY --from=composer:2.3 /usr/bin/composer /usr/local/bin/composer
 
 # Configure nginx
 COPY config/nginx.conf /etc/nginx/nginx.conf
@@ -93,10 +85,6 @@ WORKDIR /var/www/html
 COPY --chown=www-data ./ /var/www/html/
 
 RUN chmod 755 entrypoint.sh
-
-#Install php dependency
-#RUN composer install --no-dev --no-suggest --no-autoloader
-# RUN composer install  --optimize-autoloader
 
 # Expose the port nginx is reachable on
 EXPOSE 80
