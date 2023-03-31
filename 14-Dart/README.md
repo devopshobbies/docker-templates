@@ -4,7 +4,7 @@
 
 This project contains a simple and practical example of a Dockerfile to help beginners learn how to use Docker.
 
-## PrerequisitesFROM debian:stable-slim
+## Prerequisites
 
 - Docker installed on your system
 - Basic knowledge of the Linux command line
