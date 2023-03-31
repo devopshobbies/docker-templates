@@ -105,3 +105,4 @@ COPY --from=builder --chown=node:node /home/node/yarn.lock ./
 ```docker
 CMD ["node", "dist/server.js"]
 ```
+
