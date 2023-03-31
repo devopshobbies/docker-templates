@@ -41,5 +41,5 @@ docker build -t hello-fastapi .
 3. Run the Docker container:
 
 ```sh
-docker run -t -p 80:80 hello-fastapi
+docker container run -d hello-fastapi -p 80:80 
 ```
