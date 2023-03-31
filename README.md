@@ -10,13 +10,13 @@ Let's grow together!
 
 DVH
 
-## languages 
+## languages
 
 You can find different frameworks or use cases in each folder.
 
 <!-- [number-language-framework or environment](link to repo) -->
 
-[01-JavaScript/Typescript-Backend](01-JavaScript-Typescript-Backend/)
+[01-JavaScript/Typescript-Backend](01-JavaScript-Typescript-Backend/README.md)
 
 [02-JavaScript/Typescript-Frontend](02-JavaScript-Typescript-Frontend/)
 
@@ -29,4 +29,3 @@ You can find different frameworks or use cases in each folder.
 [06-C#](06-C%23/)
 
 [07-Python](07-Python/)
-
