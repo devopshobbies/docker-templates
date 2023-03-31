@@ -1,0 +1,12 @@
+name: DevOps_Hobbies
+description: Simple Hello Dockerfile With Dart
+version: 1.0.0
+
+environment:
+  sdk: '>=2.14.0 <3.0.0'
+
+dependencies:
+# Add your dependencies here
+
+dev_dependencies:
+# Add your dev dependencies here
