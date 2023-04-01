@@ -103,6 +103,6 @@ COPY --from=builder --chown=node:node /home/node/yarn.lock ./
 ## The final step, add the startup command
 
 ```docker
-CMD ["node", "dist/server.js"]
+CMD ["node", "dist/main.js"]
 ```
 
