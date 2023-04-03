@@ -1,4 +1,4 @@
-<img src="./_assets/banner.png" style="width: 100%; max-width: 1500px; margin: 0 auto; display: block">
+<img src="./_assets/banner.png" style="width: 100%; max-width: 1200px; margin: 0 auto; display: block">
 
 # Docker-Templates
 
