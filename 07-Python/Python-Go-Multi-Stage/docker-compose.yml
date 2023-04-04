@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  webapp:
+    build: .
+    command: python webapp/app.py
+    container_name: devops_webapp
+    ports:
+      - 8088:8088
+    links:
+      - db:db
+    environment:
+      SQL_HOST: ${DB_HOST}
+      SQL_PORT: ${DB_PORT}
+      DATABASE: ${POSTGRES_DB}
+    # restart: always
+
+  db:
+    image: postgres:13.4-bullseye
+    container_name: devops_database
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./webapp/.env
+    # restart: always
+
+volumes:
+  postgres_data:
