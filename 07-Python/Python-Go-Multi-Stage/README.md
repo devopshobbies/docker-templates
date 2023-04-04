@@ -1,6 +1,7 @@
 # Multi stage docker containers
 
-This is a Flask application that demonstrates connecting to a Postgresql database and running a Go script using subprocess in Python. \
+This is an example of a Multi-Stage builds that runs another programming language application (go package) inside other container (Python Flask).
+This project is a Flask application that demonstrates connecting to a Postgresql database and running a Go script using subprocess in Python. \
 The application is containerized with Docker and can be run using docker-compose.
 
 
@@ -18,7 +19,8 @@ The application is containerized with Docker and can be run using docker-compose
 
     docker-compose up [-d] --build 
 
-The application should now be running on http://localhost:8088
+The application should now be running on http://localhost:8088\
+You can also check the status of the database on http://localhost:8088/db-status
 
 ____
 
