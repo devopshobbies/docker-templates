@@ -13,22 +13,17 @@ COPY . /usr/src/app
 # Set the working directory
 WORKDIR /usr/src/app
 
-## Install target platform (Cross-Compilation) --> Needed for Alpine
-RUN rustup target add x86_64-unknown-linux-musl
-
-# This is a dummy build to get the dependencies cached.
-RUN cargo build --target x86_64-unknown-linux-musl --release
-
-RUN ls /usr/src/app/target/x86_64-unknown-linux-musl -lah > /tmp/foo.txt
-RUN ls /usr/src/app/target/x86_64-unknown-linux-musl/release -lah > /tmp/bar.txt
+# This is the application build.
+RUN cargo build --release
 
 ##################### Runtime
 
-FROM alpine:3.17 as runtime
+FROM scratch as runtime
 
 # Copy application binary from builder image
-COPY --from=builder /usr/src/app/target/x86_64-unknown-linux-musl/release/app /usr/local/bin
-COPY --from=builder /usr/src/app/target/x86_64-unknown-linux-musl/release/app /usr/local/bin
+COPY --from=builder /usr/src/app/target/devopshobbies /usr/local/bin
+
+USER 1000
 
 # Run the application
-ENTRYPOINT ["/usr/local/bin/app"]
+ENTRYPOINT ["/usr/local/bin/devopshobbies"]
