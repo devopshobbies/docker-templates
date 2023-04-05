@@ -11,8 +11,11 @@ This docker templates demonstrate how to use `Dockerfile` for your Rust projects
 docker build -t my-rust-app .
 
 # run the app
-docker run --rm --name rusty my-rust-app
+docker run --rm --name devopshobbies my-rust-app 8080
 
-# run with ENVs
-docker run --rm -e RUST_DOCKER_NAME="Foo" --name rusty my-rust-app
+# successful curl to the application
+curl 127.0.0.1:8080 -i
+
+# failing curl to the application
+curl 127.0.0.1:8080/something/else -i
 ```
