@@ -34,4 +34,4 @@ COPY --from=builder /usr/src/app/target/x86_64-unknown-linux-musl/release/devops
 RUN apk add --update qemu-x86_64
 
 # Run the application
-ENTRYPOINT ["/usr/local/bin/devopshobbies"]
+ENTRYPOINT ["/bin/sh"]
