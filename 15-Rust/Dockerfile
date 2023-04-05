@@ -15,14 +15,14 @@ COPY Cargo.toml ./
 
 # This is a dummy build to get the dependencies cached.
 RUN mkdir src/ && echo "fn main() {println!(\"if you see this, the build broke\")}" > src/main.rs && \
-  RUSTFLAGS=-Ctarget-feature=-crt-static cargo build --target x86_64-unknown-linux-musl --release && \
+  cargo build --target x86_64-unknown-linux-musl --release && \
   rm -f target/x86_64-unknown-linux-musl/release/deps/devopshobbies*
 
 # Now copy in the rest of the sources
 COPY . ./
 
 # This is the application build.
-RUN RUSTFLAGS=-Ctarget-feature=-crt-static cargo build --target x86_64-unknown-linux-musl --release
+RUN cargo build --target x86_64-unknown-linux-musl --release
 
 ##################### Runtime
 
