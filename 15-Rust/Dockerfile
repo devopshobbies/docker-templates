@@ -21,7 +21,7 @@ RUN cargo build --release
 FROM scratch as runtime
 
 # Copy application binary from builder image
-COPY --from=builder /usr/src/app/target/devopshobbies /usr/local/bin
+COPY --from=builder /usr/src/app/target/release/devopshobbies /usr/local/bin
 
 USER 1000
 
