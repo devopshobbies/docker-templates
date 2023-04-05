@@ -4,4 +4,4 @@
 
 [python-flask](python-flask/)
 
-[python-with-postgresql](PythonWithPostgreSQL/)
+[python-with-postgresql](python-with-postgresql/)
