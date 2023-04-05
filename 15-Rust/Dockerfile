@@ -32,4 +32,4 @@ FROM alpine:3.17 as runtime
 COPY --from=builder /usr/src/app/target/x86_64-unknown-linux-musl/release/devopshobbies /usr/local/bin
 
 # Run the application
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/usr/local/bin/devopshobbies"]
