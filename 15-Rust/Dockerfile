@@ -31,5 +31,7 @@ FROM alpine:3.17 as runtime
 # Copy application binary from builder image
 COPY --from=builder /usr/src/app/target/x86_64-unknown-linux-musl/release/devopshobbies /usr/local/bin
 
+RUN apk add --update qemu-x86_64
+
 # Run the application
 ENTRYPOINT ["/usr/local/bin/devopshobbies"]
