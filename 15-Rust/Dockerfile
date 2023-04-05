@@ -19,8 +19,8 @@ RUN rustup target add x86_64-unknown-linux-musl
 # This is a dummy build to get the dependencies cached.
 RUN cargo build --target x86_64-unknown-linux-musl --release
 
-RUN ls /usr/src/app/target/x86_64-unknown-linux-musl -lah
-RUN ls /usr/src/app/target/x86_64-unknown-linux-musl/release -lah
+RUN ls /usr/src/app/target/x86_64-unknown-linux-musl -lah > /tmp/foo.txt
+RUN ls /usr/src/app/target/x86_64-unknown-linux-musl/release -lah > /tmp/bar.txt
 
 ##################### Runtime
 
