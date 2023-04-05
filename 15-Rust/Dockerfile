@@ -2,11 +2,6 @@
 
 FROM rust:1.68.2-slim as builder
 
-WORKDIR /usr/src
-
-# Create blank project
-RUN USER=root cargo new app
-
 # Set the working directory
 WORKDIR /usr/src/app
 
@@ -16,7 +11,7 @@ RUN apt-get update && apt-get install musl-tools --no-install-recommends -y
 RUN rustup target add x86_64-unknown-linux-musl
 
 # We want dependencies cached, so copy those first.
-COPY Cargo.toml Cargo.lock ./
+COPY Cargo.toml ./
 
 # This is a dummy build to get the dependencies cached.
 RUN mkdir src/ && echo "fn main() {println!(\"if you see this, the build broke\")}" > src/main.rs && \
