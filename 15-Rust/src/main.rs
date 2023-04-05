@@ -1,10 +1,28 @@
 use std::{
+    env,
     io::{prelude::*, BufReader},
     net::{TcpListener, TcpStream},
 };
 
 fn main() {
-    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() < 2 {
+        panic!("not enough arguments");
+    } else if args.len() > 2 {
+        panic!("more arguments");
+    }
+
+    let port_string = &args[1];
+    let port = match port_string.parse::<i32>() {
+        Ok(n) => n,
+        Err(_) => {
+            panic!("invalid port number");
+        },
+    };
+
+    let address = format!("127.0.0.1:{port}");
+    let listener = TcpListener::bind(address).unwrap();
 
     for stream in listener.incoming() {
         let stream = stream.unwrap();
