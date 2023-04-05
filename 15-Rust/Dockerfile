@@ -15,14 +15,14 @@ COPY Cargo.toml ./
 
 # This is a dummy build to get the dependencies cached.
 RUN mkdir src/ && echo "fn main() {println!(\"if you see this, the build broke\")}" > src/main.rs && \
-  RUSTFLAGS=-Clinker=musl-gcc cargo build --target x86_64-unknown-linux-musl --release && \
+  RUSTFLAGS=-Ctarget-feature=-crt-static cargo build --target x86_64-unknown-linux-musl --release && \
   rm -f target/x86_64-unknown-linux-musl/release/deps/devopshobbies*
 
 # Now copy in the rest of the sources
 COPY . ./
 
 # This is the application build.
-RUN RUSTFLAGS=-Clinker=musl-gcc cargo build --target x86_64-unknown-linux-musl --release
+RUN RUSTFLAGS=-Ctarget-feature=-crt-static cargo build --target x86_64-unknown-linux-musl --release
 
 ##################### Runtime
 
@@ -34,4 +34,4 @@ COPY --from=builder /usr/src/app/target/x86_64-unknown-linux-musl/release/devops
 RUN apk add --update qemu-x86_64
 
 # Run the application
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/usr/local/bin/devopshobbies"]
