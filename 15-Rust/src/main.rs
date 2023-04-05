@@ -21,7 +21,7 @@ fn main() {
         },
     };
 
-    let address = format!("127.0.0.1:{port}");
+    let address = format!("0.0.0.0:{port}");
     let listener = TcpListener::bind(address).unwrap();
 
     for stream in listener.incoming() {
