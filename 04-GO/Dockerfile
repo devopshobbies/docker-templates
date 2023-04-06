@@ -8,14 +8,14 @@ RUN apk add --no-cache git
 # create work directory called src
 WORKDIR /src
 
+# build argument for framework
+ARG FRAMEWORK=echo
+
 # copy go.mod and go.sum
-COPY go.mod go.sum ./
+COPY /$FRAMEWORK/go.mod /$FRAMEWORK/go.sum ./
 
 # download dependencies
 RUN go mod download
-
-# build argument for framework
-ARG FRAMEWORK=echo
 
 # copy other files
 COPY $FRAMEWORK .
