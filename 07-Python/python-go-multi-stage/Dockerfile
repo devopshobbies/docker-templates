@@ -9,8 +9,6 @@ RUN go install github.com/signorrayan/helloworld-go@latest && \
 ## Pull official base image ##
 FROM python:3.10-slim-bullseye as main-build
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
 ENV PATH="/usr/src/devops_hobbies/webapp/scripts:${PATH}"
 
 WORKDIR /usr/src/devops_hobbies/
