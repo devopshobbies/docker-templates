@@ -1,6 +1,6 @@
 # Go Dockerfile template
 
-```Dockerfile``` for ```Golang``` applications.
+```Dockerfile``` template for ```Golang``` applications.
 
 # Just run !
 
