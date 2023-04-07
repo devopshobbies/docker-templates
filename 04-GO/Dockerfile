@@ -18,7 +18,7 @@ COPY /$FRAMEWORK/go.mod /$FRAMEWORK/go.sum ./
 RUN go mod download
 
 # copy other files
-COPY $FRAMEWORK .
+COPY ./$FRAMEWORK ./$FRAMEWORK
 
 # build golang app
 RUN CGO_ENABLED=0 GO111MODULE=on go build -v -o /main -installsuffix cgo -ldflags="-w -s" ./$FRAMEWORK/*.go
