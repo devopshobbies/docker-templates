@@ -1,0 +1,27 @@
+{
+  "datacenter": "dc1",
+  "key_file": "/etc/consul.d/certs/dc1-server-consul-0-key.pem",
+  "cert_file": "/etc/consul.d/certs/dc1-server-consul-0.pem",
+  "ca_file": "/etc/consul.d/certs/consul-agent-ca.pem",
+  "verify_incoming": true,
+  "verify_outgoing": true,
+  "encrypt": "XXXXXXXXX",
+  "data_dir": "/consul/data",
+  "log_level": "DEBUG",
+  "server": true,
+  "ui": true,
+  "client_addr": "0.0.0.0",
+  "bind_addr": "0.0.0.0",
+  "bootstrap_expect": 1,
+  "acl": {
+   "enabled": true,
+   "default_policy": "deny",
+   "enable_token_persistence": true,
+   "tokens": {
+     "agent": "XXXXXXX"
+    }
+  },
+  "ports": {
+    "dns": 53
+  }
+}

@@ -1,0 +1,35 @@
+version: "3.3"
+services:
+  consul-server:
+    build: ./consul
+    image: consul:1.12.2 
+    restart: always
+    networks:
+      - consul
+    command: "consul agent -config-dir /etc/consul.d"
+    container_name: consul-server
+    volumes:
+      - ./consul/consul-server.json:/etc/consul.d/consul-server.json:rw
+      - ./consul-certs/:/etc/consul.d/certs/:ro
+    ports:
+      - "8500:8500"
+  vault-server:
+    build: ./vault
+    image: vault:1.12.2
+    restart: always
+    container_name: vault-server
+    volumes:
+      - ./vault/vault-server.hcl:/etc/vault.d/vault-server.hcl:rw
+    ports:
+      - "8200:8200"
+    cap_add:
+      - IPC_LOCK
+    depends_on:
+      - consul-server
+    networks:
+      - consul
+    command: "vault server -config=/etc/vault.d/vault-server.hcl"
+
+networks:
+  consul:
+    driver: bridge
