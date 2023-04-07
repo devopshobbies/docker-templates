@@ -10,9 +10,9 @@ docker build -t go-dockerfile . && docker run -it -p 80:80 go-dockerfile
 
 ```
 
-## Chose Framework
+## Choose Framework
 
-By default the selected framework is ```echo```. To select other frameworks, just pass
+By default, the selected framework is ```echo```. To select other frameworks, just pass
 the framework name in ```docker build argument```.
 
 ```sh
