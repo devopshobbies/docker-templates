@@ -8,17 +8,20 @@ RUN apk add --no-cache git
 # create work directory called src
 WORKDIR /src
 
+# build argument for framework
+ARG FRAMEWORK=echo
+
 # copy go.mod and go.sum
-COPY go.mod go.sum ./
+COPY /$FRAMEWORK/go.mod /$FRAMEWORK/go.sum ./
 
 # download dependencies
 RUN go mod download
 
 # copy other files
-COPY . .
+COPY $FRAMEWORK $FRAMEWORK
 
 # build golang app
-RUN CGO_ENABLED=0 GO111MODULE=on go build -v -o /main -installsuffix cgo -ldflags="-w -s" ./echo/*.go
+RUN CGO_ENABLED=0 GO111MODULE=on go build -v -o /main -installsuffix cgo -ldflags="-w -s" ./$FRAMEWORK/*.go
 
 # second stage
 FROM alpine
