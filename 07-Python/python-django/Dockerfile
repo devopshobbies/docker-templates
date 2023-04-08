@@ -15,9 +15,6 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
    python3-pip cron nano build-essential python3-dev default-libmysqlclient-dev  default-mysql-client  ffmpeg libmagic1
 
 
-# Install uwsgi
-RUN pip install uwsgi==2.0.20
-
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
 

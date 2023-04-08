@@ -11,7 +11,10 @@
 
 1. change `DJANGO_SETTINGS_MODULE` environment based on your project
 
-2. create a `requirements.txt` file
+2. create a `requirements.txt` file and append follow packages:
+```
+uwsgi==2.0.20 
+```
 
 3. you can edit `docker_entrypoint.sh` file, based on your project configurations.
 
