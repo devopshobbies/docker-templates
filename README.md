@@ -10,7 +10,12 @@ Let's grow together - DevOps Hobbies team.
 In this repository, we are trying to gather some practical samples of the `docker` file templates for each language and technology, so you can use them in your projects.
 We are trying to provide docker files and templates as best practices.
 
-## Categories based on the `Languages` and `technologies`:
+## How to contribute?
+
+We are performing a helpful guide about how you can contribute to the project and You can access it [from here](./CONTRIBUTING.md).
+If you find a problem anywhere in the project even in the `CONTRIBUTING.md` file, You can change the file but make sure You understand what are You doing, and if You need any other help, just create an issue and we'll be there to give you one.
+
+## languages
 
 You can find different frameworks or use cases in each folder.
 
