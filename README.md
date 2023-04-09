@@ -69,6 +69,26 @@ You can find different frameworks or use cases in each folder.
 
 - Plain Dart (hello world example): [Dockerfile](./14-Dart/Dockerfile), [Readme](./14-Dart/README.md)
 
+### .Net Core
+
+- .Net Core: [Dockerfile](./15-dotnetcore/Dockerfile), [Readme](./15-dotnetcore/README.md)
+
+### Next.js
+
+- Next.js: [Dockerfile](./16-nextjs/Dockerfile), [Readme](./16-nextjs/README.md)
+
 ### Rust programming language & related frameworks
 
-- Plain Rust: [Dockerfile](./15-Rust/Dockerfile), [Readme](./15-Rust/README.md)
+- Plain Rust: [Dockerfile](./18-Rust/Dockerfile), [Readme](./18-Rust/README.md)
+
+### Swift
+
+- Swift: [Dockerfile](./19-Swift/Dockerfile), [Readme](./19-Swift/README.md)
+
+### Nginx
+
+- Nginx: [Dockerfile](./20-nginx/Dockerfile), [Readme](./20-nginx/README.md)
+
+### Vault-Server
+
+- Vault-Server: [Dockerfile](./21-vault-server/vault/Dockerfile), [Readme](./21-vault-server/README.md)
