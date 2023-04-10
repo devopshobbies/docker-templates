@@ -23,19 +23,19 @@ You can find different frameworks or use cases in each folder.
 
 ### Javascript, Typescript `Backend` & related frameworks
 
-- Plain NodeJS: [Dockerfile](01-JavaScript-Typescript-Backend/Dockerfile), [Readme](./01-JavaScript-Typescript-Backend/README.md/)
-- NestJS: [Dockerfile](01-JavaScript-Typescript-Backend/frameworks/nestjs/Dockerfile), [Readme](./01-JavaScript-Typescript-Backend/frameworks/nestjs/README.md)
+- Plain NodeJS: [Dockerfile](01-NodeJs/Dockerfile), [Readme](./01-NodeJs/README.md)
+- NestJS: [Dockerfile](01-NodeJs/nestjs/Dockerfile), [Readme](./01-NodeJs/nestjs/README.md)
 
 ### Javascript, Typescript `Frontend` & related frameworks
 
-- Plain Javascript: [Readme](./02-JavaScript-Typescript-Frontend/README.md)
-- Angular: [Dockerfile](./10-Angular/angular/Dockerfile), [Docker Compose](./10-Angular/compose.yaml), [Readme](./10-Angular/README.md)
-- Vue.JS: [Dockerfile](./11-Vue.js/Dockerfile), [Readme](./11-Vue.js/README.md)
-- React: [Dockerfile](./12-React/Dockerfile), [Readme](./12-React/README.md)
+- Plain Javascript: [Readme](./02-Javascript/README.md)
+- Angular: [Dockerfile](./02-Javascript/Angular/angular/Dockerfile), [Docker Compose](./02-Javascript/Angular/compose.yaml), [Readme](./02-Javascript/Angular/README.md)
+- Vue.JS: [Dockerfile](./02-Javascript/VueJs/Dockerfile), [Readme](./02-Javascript/VueJs/README.md)
+- React: [Dockerfile](./02-Javascript/React/Dockerfile), [Readme](./02-Javascript/React/README.md)
 
 ### PHP programming language & related frameworks
 
-- Plain PHP: [Readme](./03-PHP/./README.md)
+- Plain PHP: [Readme](./03-PHP/README.md)
 - Laravel: [Dockerfile](./03-PHP/laravel/Dockerfile), [Readme](./03-PHP/laravel/README.md)
 
 ### Go programming language & related frameworks
