@@ -67,8 +67,8 @@ You can find different frameworks or use cases in each folder.
 
 ### Dart programming language & related frameworks
 
-- Plain Dart (hello world example): [Dockerfile](./14-Dart/Dockerfile), [Readme](./14-Dart/README.md)
+- Plain Dart (hello world example): [Dockerfile](./11-Dart/Dockerfile), [Readme](./11-Dart/README.md)
 
 ### Rust programming language & related frameworks
 
-- Plain Rust: [Dockerfile](./15-Rust/Dockerfile), [Readme](./15-Rust/README.md)
+- Plain Rust: [Dockerfile](./13-Rust/Dockerfile), [Readme](./13-Rust/README.md)
