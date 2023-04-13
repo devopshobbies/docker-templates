@@ -53,9 +53,9 @@ You can find different frameworks or use cases in each folder.
 
 ### Python programming language & related frameworks
 
-- Plain python (hello world app): [Dockerfile](./07-Python/Dockerfile), [Readme](./07-Python/README.md)
-- Plain python with postgres (simple web server): [Dockerfile](./07-Python/PythonWithPostgreSQL/Dockerfile), [Dockerfile Compose](./07-Python/PythonWithPostgreSQL/docker-compose.yaml), [Readme](./07-Python/README.md)
-- DJango: [Dockerfile](./07-Python/python-django/Django), readme required
+- Python Flask (hello world app): [Dockerfile](./07-Python/python-flask/Dockerfile), [Readme](./07-Python/python-flask/README.md)
+- Plain Python with postgres: [Dockerfile](./07-Python/python-with-postgresql/Dockerfile), [Dockerfile Compose](./07-Python/python-with-postgresql/docker-compose.yaml), [Readme](./07-Python/README.md)
+- Django: [Dockerfile](./07-Python/python-django/Django), readme required
 
 ### C++ programming language & related frameworks
 
