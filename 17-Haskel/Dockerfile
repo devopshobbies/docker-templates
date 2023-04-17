@@ -1,5 +1,5 @@
 # Use the official Haskell image as a parent image
-FROM haskell:latest
+FROM haskell:slim
 
 # Set the working directory to /app
 WORKDIR /app
