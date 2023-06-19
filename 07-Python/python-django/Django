@@ -6,7 +6,6 @@ ENV DJANGO_SUPERUSER_PASSWORD Nocnoc123456
 
 
 # Set working directory
-RUN mkdir /app
 WORKDIR /app
 COPY . /app
 

@@ -25,7 +25,6 @@ FROM --platform=$BUILDPLATFORM node:17.0.1-bullseye-slim as builder
 
 # Create a new directory called "project" and set it as the working directory for subsequent commands
 
-RUN mkdir /project
 WORKDIR /project
 # Install the Angular CLI version 13 globally using npm
 RUN npm install -g @angular/cli@13
