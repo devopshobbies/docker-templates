@@ -12,6 +12,7 @@ services:
     volumes:
       - logapp_static_volume:/logapp/static
       - logapp_files_volume:/logapp/media
+      - nginx_logs_volume:/var/log/nginx/
     networks:
       - nginx_network
 
@@ -19,6 +20,8 @@ volumes:
   logapp_static_volume:
     external: true
   logapp_files_volume:
+    external: true
+  nginx_logs_volume:
     external: true
 networks:
   nginx_network:
