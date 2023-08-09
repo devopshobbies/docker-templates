@@ -10,10 +10,10 @@ WORKDIR /app
 COPY . /app
 
 # Installing requirements
-ADD requirements/req.txt /app
-RUN pip3 install --upgrade pip
-RUN pip3 install -r req.txt
-RUN pip3 install django gunicorn
+COPY requirements/req.txt /app
+RUN pip3 install --no-cache-dir pip && \
+    pip3 install -r req.txt && \ 
+    pip3 install django gunicorn
 
 
 # Collect static files
