@@ -1,6 +1,10 @@
 # Next.js Dockerfile template
 
 ```bash
-docker build -t nextjs:latest .
-docker run -d -p 8080:3000 nextjs:latest
+
+# docker build
+docker-compose build
+
+# docker up
+docker-compose -f docker-compose.yml up -d
 ```
