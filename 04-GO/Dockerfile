@@ -12,7 +12,7 @@ WORKDIR /src
 ARG FRAMEWORK=echo
 
 # copy go.mod and go.sum
-COPY /$FRAMEWORK/go.mod /$FRAMEWORK/go.sum ./
+COPY $FRAMEWORK/go.mod $FRAMEWORK/go.sum ./
 
 # download dependencies
 RUN go mod download
@@ -27,7 +27,7 @@ RUN CGO_ENABLED=0 GO111MODULE=on go build -v -o /main -installsuffix cgo -ldflag
 FROM alpine
 
 # copy executable file
-COPY --from=builder main .
+COPY --from=builder /main .
 
 # allow main to be executed
 RUN chmod +x /main
@@ -35,5 +35,5 @@ RUN chmod +x /main
 # expose port 80
 EXPOSE 80
 
-# run app executeable file
+# run app executable file
 CMD ["./main"]
